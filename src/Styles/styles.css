@@ -1,0 +1,406 @@
+.cs-menu {
+    width: 100%;
+    height: 118px;
+    background: #9C524C;;
+}
+
+content {
+    font-size: 10px;
+    margin: 0;
+    position: relative;
+    z-index: -1;
+}
+
+.user-profile {
+    float: left;
+    margin-right: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.user-profile img {
+    vertical-align: middle;
+}
+
+.profile-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: none;
+}
+
+.user-profile:hover .profile-menu {
+    display: block;
+}
+
+.profile-menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+.profile-menu a:hover {
+    background-color: #f5f5f5;
+}
+
+.sidenav {
+    position: relative;
+    text-align: left;
+    margin-left: 0;
+    padding: 10px;
+    border: 1px solid black;
+    background-color: #9C524C;
+    z-index: 1;
+}
+
+.content {
+    width: 100%;
+    position: relative;
+    background-color: #9C524C;
+}
+
+.news {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+aside {
+    float: left;
+    width: 9%;
+}
+
+.content img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 1170px) {
+    /*.content img {*/
+    /*    height: 400px;*/
+    /*}*/
+    aside {
+        width: 22%;
+    }
+
+    .news {
+        text-align: center;
+    }
+}
+
+img {
+    width: 100%;
+    background-color: #f7f7f7;
+}
+
+.footer {
+    background: #0000FF;
+    padding: 10px 0;
+    position: page;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    color: #70726F;
+    font-size: 20px;
+    text-align: center;
+    border-top: 1px solid #70726F;
+    transition: all .5s ease;
+}
+
+.footer a {
+    color: #70726F;
+    font-size: 20px;
+    padding: 10px;
+    border-right: 1px solid #70726F;
+    transition: all .5s ease;
+}
+
+.footer a:first-child {
+    border-left: 1px solid #70726F;
+}
+
+.footer a:hover {
+    color: white;
+}
+
+ul {
+    list-style: none;
+    margin: 0 auto;
+}
+
+.li {
+    display: inline-block;
+    height: 160px;
+    width: 250px;
+}
+
+li {
+    list-style: none;
+}
+
+p {
+    margin: 0;
+}
+
+.lds-default {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-default div {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #0000FF;
+    border-radius: 50%;
+    animation: lds-default 1.2s linear infinite;
+}
+
+.lds-default div:nth-child(1) {
+    animation-delay: 0s;
+    top: 37px;
+    left: 66px;
+}
+
+.lds-default div:nth-child(2) {
+    animation-delay: -0.1s;
+    top: 22px;
+    left: 62px;
+}
+
+.lds-default div:nth-child(3) {
+    animation-delay: -0.2s;
+    top: 11px;
+    left: 52px;
+}
+
+.lds-default div:nth-child(4) {
+    animation-delay: -0.3s;
+    top: 7px;
+    left: 37px;
+}
+
+.lds-default div:nth-child(5) {
+    animation-delay: -0.4s;
+    top: 11px;
+    left: 22px;
+}
+
+.lds-default div:nth-child(6) {
+    animation-delay: -0.5s;
+    top: 22px;
+    left: 11px;
+}
+
+.lds-default div:nth-child(7) {
+    animation-delay: -0.6s;
+    top: 37px;
+    left: 7px;
+}
+
+.lds-default div:nth-child(8) {
+    animation-delay: -0.7s;
+    top: 52px;
+    left: 11px;
+}
+
+.lds-default div:nth-child(9) {
+    animation-delay: -0.8s;
+    top: 62px;
+    left: 22px;
+}
+
+.lds-default div:nth-child(10) {
+    animation-delay: -0.9s;
+    top: 66px;
+    left: 37px;
+}
+
+.lds-default div:nth-child(11) {
+    animation-delay: -1s;
+    top: 62px;
+    left: 52px;
+}
+
+.lds-default div:nth-child(12) {
+    animation-delay: -1.1s;
+    top: 52px;
+    left: 62px;
+}
+
+@keyframes lds-default {
+    0%, 20%, 80%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+}
+
+.btn-booking, .btn-light, .mainLogo img, .child-nav, .subtitle, .owl-nav > div, .contacts, .activeIcon, .mainLogo, .top-bar {
+    transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+}
+
+.top-bar {
+    position: relative;
+    width: 100%;
+    color: #9C524C;
+    z-index: 2;
+}
+
+.is-hidden .top-bar {
+    margin-top: -10%;
+    line-height: 0;
+}
+
+header.is-hidden {
+    line-height: 0;
+}
+
+.contacts {
+    font-size: 15px;
+}
+
+div {
+    display: block;
+}
+
+.top-left, .top-right {
+    background-color: #ffffff;
+}
+
+.top-left {
+    margin: 15px;
+    float: left;
+}
+
+.contacts, .langSelect, .booking-header {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.top-bar, .float-bar, .top-left, .top-logo, .top-right, .contacts, .top-icon, .weather, .langSelect, .booking-header, .btn-menu {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.contacts p {
+    margin-bottom: 0;
+}
+
+a {
+    color: #ffffff;
+}
+
+a, a:hover {
+    text-decoration: none;
+}
+
+nav {
+    font-size: 18px;
+}
+
+.navMain ul li a {
+    line-height: 70px;
+    color: #ffffff;
+}
+
+ul.child-nav {
+    position: absolute;
+    background: #9c524c;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    border-top: 1px solid #de928c;
+}
+
+.navMain ul li .child-nav a {
+    font-size: 16px;
+    line-height: 1.5em;
+    padding: 5px 10px;
+    display: block;
+    background: #9c524c !important;
+}
+
+li:hover > ul.child-nav {
+    opacity: 1;
+    max-height: 1000px;
+}
+
+ul.child-nav ul {
+    display: none !important;
+}
+
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    padding: 0 10px;
+}
+
+nav ul li a, nav ul li a:after, nav ul li a:before {
+    transition: all .5s;
+}
+
+nav ul li a:hover {
+    color: #555;
+}
+
+nav.navMain ul li a {
+    position: relative;
+    z-index: 1;
+    display: block;
+}
+
+nav.navMain ul li a:hover {
+    color: #ffffff;
+}
+
+nav.navMain ul li a:after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    height: 1px;
+    content: '.';
+    color: transparent;
+    background: rgba(255, 255, 255, .2);
+    visibility: hidden;
+    opacity: 0;
+    z-index: -1;
+}
+
+nav.navMain ul li a:hover:after {
+    opacity: 1;
+    visibility: visible;
+    height: 100%;
+}
+
+.nav-left, .nav-right {
+    flex: 1;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+
+.nav-left li, .nav-right li {
+    display: block;
+}
