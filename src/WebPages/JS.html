@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Styles/stylesJS.css">
+    <title>JS</title>
+</head>
+<body>
+<div class="container">
+    <div class="page-container">
+        <div class="rect-container">
+            <h1>Розрахунок прямокутника</h1>
+            <label for="length">Довжина:</label>
+            <input type="number" id="length">
+            <br><br>
+            <label for="width">Ширина:</label>
+            <input type="number" id="width">
+            <br><br>
+            <p>Периметр: <span id="perimeter">0</span></p>
+            <p>Площа: <span id="area">0</span></p>
+            <p>Довжина діагоналі: <span id="diagonal">0</span></p>
+        </div>
+    </div>
+    <div class="page-container chat-container">
+        <h2>Чат</h2>
+        <div class="chat-buttons">
+            <button onclick="selectUser(1)">User1</button>
+            <button onclick="selectUser(2)">User2</button>
+        </div>
+        <div class="chat-messages" id="messages"></div>
+        <div class="chat-user-input">
+            <input type="text" class="chat-input" id="inputMessage" placeholder="Введіть повідомлення">
+        </div>
+        <div class="chat-user-input">
+            <button onclick="sendMessage()">Надіслати</button>
+        </div>
+    </div>
+    <div class="page-container">
+        <div class="date-input">
+            <h2>День тижня народження</h2>
+            <label for="birthDate">Введіть дату народження:</label>
+            <input type="date" id="birthDate">
+            <button onclick="calculateDayOfWeek()">Обчислити</button>
+            <p id="result"></p>
+        </div>
+    </div>
+    <div class="page-container" id="transliteration">
+        <h2>Транслітерація українського тексту</h2>
+        <label for="ukrainianText">Український текст:</label>
+        <textarea id="ukrainianText" placeholder="Введіть український текст"></textarea>
+        <label for="transliteratedText">Транслітерований текст:</label>
+        <textarea id="transliteratedText" readonly></textarea>
+        <button onclick="transliterateText()">Транслітерувати</button>
+    </div>
+    <div class="page-container">
+        <a href="main.html" class="home-link">На головну сторінку</a>
+    </div>
+</div>
+<script src="../Scripts/rectCalcScript.js"></script>
+<script src="../Scripts/chatScript.js"></script>
+<script src="../Scripts/dateScript.js"></script>
+<script src="../Scripts/tranScript.js"></script>
+</body>
+</html>
