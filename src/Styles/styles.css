@@ -80,9 +80,6 @@ aside {
 }
 
 @media (max-width: 1170px) {
-    /*.content img {*/
-    /*    height: 400px;*/
-    /*}*/
     aside {
         width: 22%;
     }

@@ -8,35 +8,54 @@
 </head>
 <body>
 <div class="form-box">
-    <form action="main.html">
+    <form onsubmit="return validateForm();">
         <h2>Реєстрація</h2>
-        <div class="inputbox">
-            <input type="email" required>
+        <div class="input-box">
             <label>Email:</label>
+            <input type="email" id="email">
+            <div class="error-message" id="email-error"></div>
         </div>
-        <div class="inputbox">
-            <input type="password" required>
+        <div class="input-box">
             <label>Пароль:</label>
+            <input type="password" id="password">
+            <div class="error-message" id="password-error"></div>
         </div>
-        <div class="inputbox">
-            <input type="text" required>
+        <div class="input-box">
             <label>Прізвище:</label>
+            <input type="text" id="surname">
+            <div class="error-message" id="surname-error"></div>
         </div>
-        <div class="inputbox">
-            <input type="text" required>
+        <div class="input-box">
             <label>Ім'я:</label>
+            <input type="text" id="first-name">
+            <div class="error-message" id="first-name-error"></div>
         </div>
-        <div class="inputbox">
-            <input type="text" required>
+        <div class="input-box">
             <label>По батькові:</label>
+            <input type="text" id="middle-name">
+            <div class="error-message" id="middle-name-error"></div>
+        </div>
+        <div class="input-gender">
+            <label>Стать:</label>
+            <label>Чоловік</label>
+            <input type="radio" name="gender" value="Чоловік">
+            <label>Жінка</label>
+            <input type="radio" name="gender" value="Жінка">
+            <div class="error-message" id="gender-error"></div>
+        </div>
+        <div class="input-phone">
+            <label>Номер телефону:</label>
+            <input type="text" id="phone">
+            <div class="error-message" id="phone-error"></div>
         </div>
         <div class="input-date">
             <label>Дата народження:</label>
-            <input type="date" required>
+            <input type="date" id="date">
+            <div class="error-message" id="date-error"></div>
         </div>
         <div class="input-group">
             <label>Група:</label>
-            <select id="group" required>
+            <select id="group">
                 <option value="ІА-21">ІА-21</option>
                 <option value="ІА-22">ІА-22</option>
                 <option value="ІА-23">ІА-23</option>
@@ -45,10 +64,38 @@
         </div>
         <div class="input-file">
             <label>Завантажити файл (.pdf, .doc, .docx):</label>
-            <input type="file" accept=".pdf, .doc, .docx" required>
+            <input type="file" accept=".pdf, .doc, .docx">
+            <div class="error-message" id="file-error"></div>
         </div>
         <button type="submit">Зареєструватися</button>
     </form>
 </div>
+<div class="users-table">
+    <table id="data-table">
+        <thead>
+        <tr>
+            <th>Вибір</th>
+            <th>Email</th>
+            <th>Пароль</th>
+            <th>Прізвище</th>
+            <th>Ім'я</th>
+            <th>По батькові</th>
+            <th>Стать</th>
+            <th>Номер телефону</th>
+            <th>Дата народження</th>
+            <th>Група</th>
+            <th>Файл</th>
+            <th>Дії</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
+<script src="../Scripts/forRegistration/phoneScript.js"></script>
+<script src="../Scripts/forRegistration/checkScript.js"></script>
+<script src="../Scripts/forRegistration/usersTableScript.js"></script>
 </body>
 </html>
