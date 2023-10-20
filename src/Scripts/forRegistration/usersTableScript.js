@@ -20,13 +20,13 @@ function addToDataTable(email, password, surname, firstName, middleName, gender,
     row.insertCell(10).textContent = file;
     const cellActions = row.insertCell(11);
     const deleteButton = document.createElement('button');
-    deleteButton.textContent = 'Видалити';
+    deleteButton.innerHTML = '&#128465;';
     deleteButton.addEventListener('click', function () {
         deleteSelectedRows();
     });
     cellActions.appendChild(deleteButton);
     const duplicateButton = document.createElement('button');
-    duplicateButton.textContent = 'Продублювати';
+    duplicateButton.innerHTML = '&#8644;';
     duplicateButton.addEventListener('click', function () {
         duplicateSelectedRows();
     });
