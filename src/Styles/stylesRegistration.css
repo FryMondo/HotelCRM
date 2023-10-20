@@ -1,13 +1,13 @@
 body {
     font-family: Arial, sans-serif;
-    background: url('../Pictures/hotelsReg.jpg') no-repeat center;
+    background: linear-gradient(to bottom right, white, blue, violet);
     background-size: cover;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 125vh;
 }
 
 .form-box {
@@ -15,7 +15,6 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 20px;
-    backdrop-filter: blur(10px);
 }
 
 h2 {
@@ -24,47 +23,21 @@ h2 {
     text-align: center;
 }
 
-.inputbox {
+.input-box, .input-gender, .input-phone, .input-date, .input-group, .input-file {
     position: relative;
-    margin: 30px 0;
-    width: 310px;
-    border-bottom: 2px solid #fff;
-}
-
-.inputbox label {
-    position: absolute;
-    top: 50%;
-    left: 5px;
-    color: #fff;
-    font-size: 1em;
-    pointer-events: none;
-    transition: .5s;
-}
-
-input:focus ~ label,
-input:valid ~ label {
-    top: -5px;
-}
-
-.inputbox input {
-    width: 100%;
-    height: 50px;
-    background: transparent;
-    border: none;
-    outline: none;
-    font-size: 1em;
-    padding: 0 35px 0 5px;
-}
-
-.input-date {
-    position: relative;
-    margin: 30px 0;
+    margin: 30px 0 30px 332px;
     width: 310px;
     border-bottom: 2px solid #fff;
     color: white;
 }
 
-.input-date input {
+.input-box label {
+    position: absolute;
+    left: 5px;
+    color: #fff;
+}
+
+.input-box input, .input-phone input, .input-date input, .input-file input {
     width: 100%;
     height: 50px;
     background: transparent;
@@ -72,13 +45,6 @@ input:valid ~ label {
     outline: none;
     font-size: 1em;
     padding: 0 35px 0 5px;
-}
-
-.input-group {
-    position: relative;
-    margin: 30px 0;
-    width: 310px;
-    border-bottom: 2px solid #fff;
     color: white;
 }
 
@@ -87,31 +53,21 @@ input:valid ~ label {
     height: 50px;
     background: transparent;
     border: none;
-    outline: none;
     font-size: 1em;
     padding: 0 35px 0 5px;
 }
 
-.input-file {
-    position: relative;
-    margin: 30px 0;
-    width: 310px;
-    border-bottom: 2px solid #fff;
-    color: white;
-}
-
-.input-file input {
-    width: 100%;
-    height: 50px;
-    background: transparent;
-    border: none;
-    outline: none;
+.error-message {
+    color: rgb(255, 0, 0);
+    position: absolute;
+    top: 110%;
+    left: 5px;
     font-size: 1em;
-    padding: 0 35px 0 5px;
 }
 
 button {
-    width: 100%;
+    width: 31%;
+    margin-left: 330px;
     height: 40px;
     border-radius: 40px;
     background: #fff;
@@ -122,19 +78,84 @@ button {
     font-weight: 600;
 }
 
-.register {
-    font-size: .9em;
-    color: #fff;
-    text-align: center;
-    margin: 25px 0 10px;
+table {
+    width: 60%;
+    margin-left: 100px;
+    padding: 30px;
+    min-height: 90px;
+    border-radius: 10px;
+    border-color: #fff;
 }
 
-.register p a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: 600;
+th {
+    border-radius: 10px;
+    border: 2px solid #fff;
+    height: 40px;
+
 }
 
-.register p a:hover {
-    text-decoration: underline;
+td {
+    border-radius: 10px;
+    border: 2px solid #fff;
+    height: 40px;
+}
+
+td button {
+    margin-left: 20px;
+}
+
+@media (max-width: 768px) {
+    body {
+        height: auto;
+    }
+
+    .input-box, .input-gender, .input-phone, .input-date, .input-group, .input-file {
+        margin: 30px 0;
+    }
+
+    button {
+        width: 90%;
+        margin-left: -0px;
+    }
+
+    table {
+        width: 100%;
+        display: flex;
+        margin-left: -0px;
+    }
+
+    thead tr {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    th {
+        width: calc(50% - 10px);
+        margin-bottom: 10px;
+    }
+
+    tbody {
+        display: block;
+        position: absolute;
+        margin-top: 350px;
+        margin-left: -50px;
+        justify-content: center;
+    }
+
+    tbody tr {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    td {
+        width: calc(50% - 10px);
+        margin-bottom: 10px;
+        overflow: hidden;
+    }
+    td button {
+        margin-left: 0;
+        width: 30%;
+    }
 }
