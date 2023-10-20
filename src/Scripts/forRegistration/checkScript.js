@@ -47,6 +47,15 @@ fileInput.addEventListener('input', function () {
     clearErrorMessages('file-error');
 });
 
+function validateEmail(email) {
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    if (emailPattern.test(email)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 function validateForm() {
     const email = emailInput.value;
     const password = passwordInput.value;
@@ -67,9 +76,15 @@ function validateForm() {
     if (email.trim() === '') {
         displayError('email-error', '(!) Заповніть поле Email');
         return false;
+    } else if (!validateEmail(email)) {
+        displayError('email-error', '(!) Невірний формат Email');
+        return false;
     }
     if (password.trim() === '') {
         displayError('password-error', '(!) Заповніть поле Пароль');
+        return false;
+    } else if (password.trim().length < 8) {
+        displayError('password-error', '(!) Пароль повинен містити принаймні 8 символів');
         return false;
     }
     if (surname.trim() === '') {
@@ -91,14 +106,29 @@ function validateForm() {
     if (date.trim() === '') {
         displayError('date-error', '(!) Заповніть дату народження');
         return false;
-    }
-    if (phone.trim() === '') {
-        displayError('phone-error', '(!) Заповніть Номер телефону');
-        return false;
+    } else {
+        const birthDate = new Date(date);
+        const today = new Date();
+        const minBirthDate = new Date(1900, 5, 22);
+        if (birthDate > today) {
+            displayError('date-error', '(!) Дата народження не може бути у майбутньому.');
+            return false;
+        }
+        if (birthDate < minBirthDate) {
+            displayError('date-error', '(!) Мінімальний рік народження - 1900');
+            return false;
+        }
     }
     if (selectedFile.trim() === '') {
         displayError('file-error', '(!) Завантажте файл');
         return false;
+    } else {
+        const allowedExtensions = ['.pdf', '.doc', '.docx'];
+        const fileExtension = selectedFile.slice(((selectedFile.lastIndexOf(".") - 1) >>> 0) + 2);
+        if (!allowedExtensions.includes('.' + fileExtension.toLowerCase())) {
+            displayError('file-error', '(!) Недопустиме розширення файлу');
+            return false;
+        }
     }
     addToDataTable(email, password, surname, firstName, middleName, selectedGender, phone, date, selectedGroup, selectedFile);
     emailInput.value = '';
