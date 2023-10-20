@@ -90,9 +90,18 @@ function validateForm() {
     if (surname.trim() === '') {
         displayError('surname-error', '(!) Заповніть поле Прізвище');
         return false;
+    } else if (!/^[a-zA-Zа-яА-ЯёЁ\s\-']+$/i.test(surname)) {
+        displayError('surname-error', '(!) Поле Прізвище не повинно містити цифри.');
+        return false;
     }
     if (firstName.trim() === '') {
         displayError('first-name-error', '(!) Заповніть поле Ім\'я');
+        return false;
+    } else if (!/^[a-zA-Zа-яА-ЯёЁ\s\-']+$/i.test(firstName)) {
+        displayError('first-name-error', '(!) Поле Ім\'я не повинно містити цифри.');
+        return false;
+    } else if (!/^[a-zA-Zа-яА-ЯёЁ\s\-']+$/i.test(middleName)) {
+        displayError('middle-name-error', '(!) Поле По-батькові не повинно містити цифри.');
         return false;
     }
     if (middleName.trim() === '') {
